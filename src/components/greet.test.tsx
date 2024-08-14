@@ -1,23 +1,46 @@
 import React from "react"
 import Greet from "./greet"
 import { render,screen } from "@testing-library/react"
+import { act } from "react"
 
-test('testing the presence of  hell',()=>{
 
-    render(<Greet/>);
-    const testingText = screen.getByText(/hello/i);
-    expect(testingText).toBeInTheDocument();
 
-})
+describe('Greet',()=>{
 
+    test('testing the presence of  hell',()=>{
+
+        act(()=>{
+            render(<Greet name={'amit' }/>);
+
+        })
+        render(<Greet name={'amit' }/>);
+        const testingText = screen.getByText(/hello/i);
+        expect(testingText).toBeInTheDocument();
+    
+    })
+
+    describe('nested describe',()=>{
+
+        
 test('testing for hello upper case',()=>{
-    render(<Greet/>)
+
+    act(()=>{
+        render(<Greet/>)
+    })
     let  text  =  screen.getByText('Hello');
     expect(text).toBeInTheDocument()
 })
 
 test('To contain hello with the name of person',()=>{
-    render(<Greet name='Vishwas'/>)
+    act(()=>{
+        render(<Greet name='Vishwas'/>)
+
+    })
     let text  = screen.getByText('Hello Vishwas')
     expect(text).toBeInTheDocument()
+})
+
+
+    })
+
 })
