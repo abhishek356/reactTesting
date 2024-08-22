@@ -28,8 +28,14 @@ describe('Application',()=>{
 
         // let getElementPlaceholder = screen.getByPlaceholderText('Enter full nme');
 
-        let getElemenetByDisplay= screen.getByDisplayValue('This is the default valu')
-        expect(getElemenetByDisplay).toBeInTheDocument();
+        // let getElemenetByDisplay= screen.getByDisplayValue('This is the default valu')
+        // expect(getElemenetByDisplay).toBeInTheDocument();
+
+        // let getAltElement = screen.getByAltText('an image')
+
+        // expect(getAltElement).toBeInTheDocument()
+        let getTitle  =  screen.getByTitle('close');
+        expect(getTitle).toBeInTheDocument();
         // expect(getElementPlaceholder).toBeInTheDocument()
         // expect(getElementLabel).toBeInTheDocument();
         // expect(roleCheckh1).toBeInTheDocument()
